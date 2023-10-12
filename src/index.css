@@ -1,13 +1,133 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Inconsolata:wght@300;400;500;700&family=Onest:wght@100;300;500;700&family=Roboto:wght@300;400;700&display=swap");
+
+/* 
+Main Blue Color = #61dbfb
+*/
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Abel", sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-family: "Onest", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: #212529;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.container {
+  padding: 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.item {
+  height: 140px;
+  width: 50%;
+  padding: 20px;
+  border: solid 1px #61dbfb;
+  border-radius: 10px 0 10px 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.btn {
+  width: 0%;
+  border: none;
+  transition: 0.2s ease-in-out;
+  font-size: 15px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #61dbfb;
+}
+
+.btn-add {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  font-size: 60px;
+  background-color: #61dbfb;
+  color: #212529;
+  border: none;
+  transition: ease-in-out;
+}
+.btn-add:hover {
+  cursor: pointer;
+}
+
+form {
+  height: 300px;
+  width: 500px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border: 1px solid #61dbfb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  border-radius: 0 0 40px 0;
+  padding: 0 50px 0 40px;
+  transition: ease-in-out;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  height: 50%;
+}
+
+.col-25 {
+  width: 25%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 18px;
+}
+.col-75 {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 75%;
+  outline: none;
+  height: 50%;
+  border-radius: 10px;
+  border: none;
+  background-color: #30363c;
+}
+input {
+  width: 75%;
+  height: 30%;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  background-color: #30363c;
+}
+
+.submit {
+  width: 75%;
+  height: 50%;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #61dbfb;
+  border: none;
+  border-radius: 10px;
 }
