@@ -70,30 +70,26 @@ function ItemAddForm({ onAddItem }) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-75">
+        <div className="col">
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="Task Title"
           ></input>
-        </div>
-        <div className="col-25">
-          <label>Task Title</label>
         </div>
       </div>
 
       <div className="row">
-        <div className="col-75">
+        <div className="col">
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            placeholder="Task Description"
           ></textarea>
-        </div>
-        <div className="col-25">
-          <label>Task Description</label>
         </div>
       </div>
       <div className="row">
-        <div className="col-75">
+        <div className="col">
           <button className="submit">submit</button>
         </div>
       </div>

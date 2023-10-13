@@ -91,35 +91,23 @@ form {
   height: 50%;
 }
 
-.col-25 {
-  width: 25%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  font-size: 18px;
-}
-.col-75 {
-  width: 75%;
+.col {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-textarea {
-  width: 75%;
-  outline: none;
-  height: 50%;
-  border-radius: 10px;
-  border: none;
-  background-color: #30363c;
-}
+textarea,
 input {
   width: 75%;
-  height: 30%;
   outline: none;
   border-radius: 10px;
   border: none;
   background-color: #30363c;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
 }
 
 .submit {
@@ -130,4 +118,25 @@ input {
   background-color: #61dbfb;
   border: none;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 440px) {
+  .item {
+    height: 80px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn-add {
+    bottom: 2%;
+    right: 3%;
+    height: 60px;
+    width: 60px;
+    font-size: 35px;
+  }
+  form {
+    width: 70%;
+    height: 200px;
+    bottom: 2%;
+    right: 3%;
+  }
 }
