@@ -25,7 +25,10 @@ export default function App() {
 
       {displayForm && <ItemAddForm onAddItem={handleAddItem} />}
 
-      <button className="btn-add" onClick={handleToggleForm}>
+      <button
+        className={`btn-add ${displayForm ? "active" : ""}`}
+        onClick={handleToggleForm}
+      >
         &#x2b;
       </button>
     </div>
