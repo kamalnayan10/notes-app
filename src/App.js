@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [displayForm, setDisplayForm] = useState(false);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(getLocalTasks());
 
   function handleToggleForm() {
     setDisplayForm((disp) => !disp);
@@ -16,6 +16,10 @@ export default function App() {
   function handleRemoveItem(ID) {
     setTasks(tasks.filter((task) => task.id !== ID));
   }
+
+  useEffect(() => {
+    localStorage.setItem("tasksList", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="App">
@@ -33,6 +37,11 @@ export default function App() {
       </button>
     </div>
   );
+}
+
+function getLocalTasks() {
+  let taskList = localStorage.getItem("tasksList");
+  return taskList ? JSON.parse(taskList) : [];
 }
 
 function ItemContainer({ tasks, onRemove }) {
