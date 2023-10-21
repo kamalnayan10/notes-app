@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 export default function App() {
   const [displayForm, setDisplayForm] = useState(false);
-  const [tasks, setTasks] = useState(getLocalTasks());
+  const [tasks, setTasks] = useLocalStorage('tasksList', []);
 
   function handleToggleForm() {
     setDisplayForm((disp) => !disp);
@@ -17,9 +18,7 @@ export default function App() {
     setTasks(tasks.filter((task) => task.id !== ID));
   }
 
-  useEffect(() => {
-    localStorage.setItem("tasksList", JSON.stringify(tasks));
-  }, [tasks]);
+
 
   return (
     <div className="App">
@@ -37,11 +36,6 @@ export default function App() {
       </button>
     </div>
   );
-}
-
-function getLocalTasks() {
-  let taskList = localStorage.getItem("tasksList");
-  return taskList ? JSON.parse(taskList) : [];
 }
 
 function ItemContainer({ tasks, onRemove }) {
